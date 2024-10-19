@@ -72,11 +72,18 @@ const dice = function () {
 */
 
 const whoIsBigger = function (n1, n2) {
-  if (n1 >= n2) return n1
-  else return n2
+  if (n1 > n2) {
+    return n1
+  } else if (n1 == n2) {
+    return 'Equal'
+  } else {
+    return n2
+  }
 }
 
 console.log(whoIsBigger(6, 6))
+console.log(whoIsBigger(21, 7))
+console.log(whoIsBigger(3, 10))
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
@@ -84,10 +91,27 @@ console.log(whoIsBigger(6, 6))
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
 
+const splitMe = function (string) {
+  return (splitArray = string.split(' '))
+}
+
+console.log(splitMe('Ciao come stai'))
+
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+
+const deleteOne = function (str, boolean) {
+  if (boolean) {
+    return str.slice(1)
+  } else {
+    return str.slice(0, -1)
+  }
+}
+
+console.log(deleteOne('Tommaso', true))
+console.log(deleteOne('Tommaso', false))
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
@@ -95,13 +119,32 @@ console.log(whoIsBigger(6, 6))
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
+const onlyLetters = function (str1) {
+  return str1.replace(/[0-9]/g, '')
+}
+
+console.log(onlyLetters('44 gatti in fila per 6 col resto di 2'))
+
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+const isThisAnEmail = function (str2) {
+  if (str2.includes('@' && '.')) return true
+}
+
+console.log(isThisAnEmail('tommypanci@gmail.com'))
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+const whatDayIsIt = function () {
+  let date = new Date()
+  return date.getDay()
+}
+
+console.log(whatDayIsIt())
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -116,6 +159,23 @@ console.log(whoIsBigger(6, 6))
   }
 */
 
+let object = {
+  sum: 0,
+  values: [],
+}
+
+const rollTheDices = function (num) {
+  let diceNum // VARIABILE DI APPOGGIO
+  for (i = 0; i < num; i++) {
+    diceNum = dice()
+    object.values.push(diceNum)
+    object.sum += diceNum
+  }
+  return object
+}
+
+console.log(rollTheDices(3))
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
@@ -123,6 +183,22 @@ console.log(whoIsBigger(6, 6))
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+
+const isTodayMyBirthday = function () {
+  let today = new Date()
+  console.log(today)
+  let myBirthday = new Date('21 September')
+  console.log(myBirthday)
+
+  if (
+    today.getMonth() === myBirthday.getMonth() &&
+    myBirthday.getDay() === today.getDay()
+  )
+    return true
+  else return false
+}
+
+console.log(isTodayMyBirthday())
 
 // Arrays & Oggetti
 
