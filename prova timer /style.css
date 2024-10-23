@@ -1,0 +1,124 @@
+body {
+  background-image: url(/assets/img/bg.jpg);
+  background-size: cover;
+  background-position: top;
+  font-family: 'outfit', sans-serif;
+  background-attachment: fixed;
+  color: #e7e7eb;
+  box-sizing: content-box;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+header {
+  white-space: nowrap; /* Evita che i div vadano a capo */
+  position: relative;
+}
+
+section {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  line-height: 1; /* Imposta l'altezza della linea pari a quella del testo */
+}
+
+p {
+  line-height: 1.3;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  accent-color: #b51289;
+  /* Cambia il colore degli input selezionati */
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  margin: 3rem auto;
+  height: 3rem;
+  width: 13rem;
+  background-color: #00ffff;
+  font-family: 'outfit', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  background-color: #00ffff;
+  border: none;
+  text-transform: uppercase;
+}
+
+.activatedButton {
+  box-shadow: 0 0 3px #00ffff, 0 0 20px #00ffff, 0 0 45px #00ffff,
+    0 0 180px #00ffff;
+}
+
+.fucsiaColor {
+  color: #d20094;
+}
+
+#divLogo,
+#divTimer {
+  height: 200px;
+  /* border: 3px solid #00ffff; */
+  display: inline-block; /* Rende i div inline-block per posizionarli fianco a fianco */
+  vertical-align: top; /* Allinea verticalmente al centro */
+}
+
+#divLogo {
+  width: 85%;
+}
+
+#divLogo img {
+  width: 150px; /* Imposta una larghezza per il logo */
+}
+
+#divTimer {
+  width: 100px;
+  text-align: center; /* Allinea il testo a destra */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#logoImg {
+  width: 150px;
+  margin-top: 3rem;
+  margin-left: 0rem;
+  margin-bottom: 7rem;
+}
+
+#container {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1024px;
+}
+
+#title {
+  text-align: center;
+  height: 8em;
+}
+
+#content {
+  margin-top: 3rem;
+  /* height: 250px; */
+}
+
+#divMessage {
+  padding-top: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+}
+
+#lastSection {
+  margin-top: 3rem;
+  text-align: center;
+}
