@@ -103,6 +103,30 @@ localStorage.clear()
 localStorage.setItem('newItem', JSON.stringify({ Epicode: true }))
 console.log(JSON.parse(localStorage.getItem('newItem')))
 
+const nameInput = document.getElementById('inputText')
+const saveBtn = document.getElementById('save')
+const removeBtn = document.getElementById('delete')
+const savedNameDisplay = document.getElementById('savedNameDisplay')
+
+function displaySavedName() {
+  const savedName = localStorage.getItem('userName')
+  if (savedName) {
+    savedNameDisplay.textContent = `Nome salvato: ${savedName}`
+  } else {
+    savedNameDisplay.textContent = 'Nessun nome salvato'
+  }
+}
+
+saveBtn.addEventListener('click', function () {
+  const name = nameInput.value.trim()
+  if (name) {
+    localStorage.setItem('NOME INSERITO CON SUCCESSO', name)
+    displaySavedName()
+  } else {
+    alert('ERRORE')
+  }
+})
+
 // FETCH
 // GET POST PUT DELETE
 // READ CREATE UPDATE DELETE
