@@ -40,6 +40,55 @@ class Stadium {
 const SanSiro = new Stadium('Milano', 'Calcio', 4, 80000)
 console.log(SanSiro)
 
+class User {
+  constructor(_firstName, _lastName, _age, _location) {
+    this.firstName = _firstName
+    this.lastName = _lastName
+    this.age = _age
+    this.location = _location
+  }
+  compareAge(otherUser) {
+    if (this.age === otherUser.age) {
+      return `${this.firstName} e ${otherUser.firstName} hanno la stessa età`
+    } else {
+      return `${this.firstName} e ${otherUser.firstName} hanno la età diverse`
+    }
+  }
+}
+
+const user1 = new User('Tommaso', 'Panciroli', '21', 'Reggio Emilia')
+const user2 = new User('Francois', 'Lampasona', '24', 'Trapani')
+const user3 = new User('Valentina', 'Gargiulo', '24', 'Roma')
+
+console.log(user1)
+console.log(user2)
+console.log(user1.compareAge(user2))
+console.log(user2.compareAge(user3))
+
+// ES 2
+
+class Pet {
+  constructor(_petName, _ownerName, _species, _breed) {
+    this.petName = _petName
+    this.ownerName = _ownerName
+    this.species = _species
+    this.breed = _breed
+  }
+  compareOwner(otherPet) {
+    if (this.ownerName === otherPet.ownerName) {
+      return `${this.petName} e ${otherPet.petName} hanno lo stesso padrone`
+    } else {
+      return `${this.petName} e ${otherPet.petName} hanno padroni diversi`
+    }
+  }
+}
+
+const pet1 = new Pet('Biscotto', 'Tommaso', 'Gatto', 'Soriano')
+const pet2 = new Pet('Frida', 'Alessia', 'Gatto', 'Soriano')
+const pet3 = new Pet('Matì', 'Tommaso', 'Gatto', 'Soriano')
+console.log(pet1.compareOwner(pet2))
+console.log(pet1.compareOwner(pet3))
+
 //LOCAL STORAGE E SESSION STORAGE
 // setItem(key, value) salva una dato
 // getITem(key) recuperare

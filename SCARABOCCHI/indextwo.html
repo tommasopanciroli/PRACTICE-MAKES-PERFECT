@@ -4,10 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
   </head>
   <body>
     <main>
       <ul id="users-list"></ul>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col col-12 col-md-6">
+            <form id="pet-form">
+              <div class="mb-3">
+                <label class="form-label" for="firstName">Nome animale</label>
+                <input
+                  class="form-control"
+                  id="petName"
+                  type="text"
+                  placeholder="Biscotto, Felix..."
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="lastName"
+                  >Nome proprietario</label
+                >
+                <input
+                  class="form-control"
+                  id="ownerName"
+                  type="text"
+                  placeholder="Tommaso, Giulia..."
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="phone">Specie</label>
+                <input
+                  class="form-control"
+                  id="species"
+                  type="text"
+                  placeholder="cane, gatto..."
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="phone">Razza</label>
+                <input
+                  class="form-control"
+                  id="breed"
+                  type="text"
+                  placeholder="labrador, soriano..."
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-success">SALVA</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="./index.js"></script>
   </body>
