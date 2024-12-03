@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Button Movement</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+      }
+      #container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .button {
+        position: absolute;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      #randomButton:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>GABRIELE LUCARELLI HA RAPITO E UCCISO ALDO MORO?</h1>
+      <button id="randomButton" class="button" style="top: 40%; left: 40%">
+        NO
+      </button>
+      <button id="staticButton" class="button" style="top: 60%; left: 45%">
+        SI
+      </button>
+    </div>
+    <script>
+      const randomButton = document.getElementById('randomButton')
+      const container = document.getElementById('container')
+
+      randomButton.addEventListener('mouseenter', () => {
+        const containerWidth = container.offsetWidth
+        const containerHeight = container.offsetHeight
+        const buttonWidth = randomButton.offsetWidth
+        const buttonHeight = randomButton.offsetHeight
+
+        // Calcola nuove posizioni casuali
+        const newLeft = Math.random() * (containerWidth - buttonWidth)
+        const newTop = Math.random() * (containerHeight - buttonHeight)
+
+        // Imposta nuove posizioni
+        randomButton.style.left = `${newLeft}px`
+        randomButton.style.top = `${newTop}px`
+      })
+    </script>
+  </body>
+</html>
